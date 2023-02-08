@@ -1,0 +1,400 @@
+  
+
+
+
+                       Clanring CTF Home Server v2.8
+                                                  
+
+Introduction 
+
+Basic Setup  
+
+Contents 
+
+Instructions-Setup 
+
+Commands Player 
+
+Commands Admin 
+
+  
+The Clanring CTF Home server gives clans a enhanced way to play matches, a rally timer for even starts, enhaced stats and scoring and easily
+accessable server settings with a simple 4 digit admin code.  It can also function as a regular Threewav CTF4 server in skirmish mode while giving
+the ability for players to warp to any level they choose.  Most servers will prolly be set to run in skirmish mode on the servers public port and in
+Clanring mode on the private port.  
+  
+
+Basic Setup 
+
+What you get in the crctf2x.* file: 
+
+This document in html format and MS Word format. 
+
+The crctf2x.txt file with basic info and version updates. 
+
+A progs folder containing all the Crctf qc files. 
+
+Fastqcc.exe, the best qc compiler avaliable today.   NOTE: fastqcc MAY have problems compiling the latest version of CRCTF.  For this reason it is currently not included in this archive.  If you experience problems with it, use a more basic compiler like qccdos.
+
+A sample autoexec.cfg for the server itself. 
+
+Instructions - Setup 
+
+There are only a couple steps that need to be taken to setup a clanring server.  This setup is done by setting a couple of variables and recompiling
+the server code.  All settings are located in the settings.qc file.  These settings are as follows. 
+
+ADMIN_CODE_REAL ==> the 4 digit code used to get admin powers 
+
+LOCKOUT ==> Default value for lockout  1 enables, 0 disables 
+
+LOCK_NUM ==> Default value for lockmax, 2 => 8   0 disables 
+
+DEBUGGING ==> Do not turn this on unless testing, removes all security from server. 
+
+TEAM_CAPTURE_CUSTOM ==> 1 enables, 0 disables.  This is the custom Threewave CTF files, you want to run this, except under extremely rare
+circumstances.  
+
+OBSERVER_ENTRY ==> 1 enables, 0 disables.  Whether or not you enter the server as an observer.  
+
+FORCE_RESPAWN ==> the number of seconds till players are automatically respawned, 0 disables 
+
+LOCK_LEVEL ==> locks the game onto a single level 1 enables, 0 disables 
+
+TM_SV_AIM ==> if sv_aim 0.93 should be used in teamplay; 1 enables, 0 disables 
+
+OVERRIDE_VOTES ==> percentage of players needed to start timer with override function 
+
+AUTO_RESPAWN ==> How long before a player auotmatically respawns.  
+
+USE_PLS ==> 1 if the PLS (see below) should be used, 0 for CTF default. Skirmish mode 
+
+CORPSES ==>1 if you want the dead bodies around, 0 to have a clean floor 
+
+NORUNES ==> 1 for no runes, 0 for runes.
+
+EXPANDED_MAPS ==> 0 if you only have the Threewave maps, 1 if you only have Threewave + Expansion, 2 if you have the complete All-Star map set (recommended). 
+
+ The next things you want to take care of are the server greeting messages, what a player sees when he connects.  The greeting can be anything
+you want as long as it contains the string “Running Clanring CTF Home Server v2.8” as the second line.                                              
+
+SERVER_GREETING_CLANRING ==> This is what a player will see if entering in Clanring mode. 
+
+SERVER_GREETING_RED ==> This is what the player will see if entering while the server is in skirmish mode and is put on the red team. 
+
+SERVER _GREETING_BLUE ==> This is what the player will see if entering while the server is in skirmish mode and is put on the blue team. 
+
+SERVER_GREETING_OBSERVER_CR ==> This is what the player will see when entering as an obserever in Clanring mode 
+
+SERVER_GREETING_OBSERVER_SK ==> This is what the player will see when entering as an obserever in Skirmish mode 
+  
+
+Next you’ll want to set the level sequence, you get to run through 25 levels, if you don’t have 25 levels you want to cycle through just put  “none”
+in the slot.                                                                                                                                                                                                                                            
+Example: 
+
+level_1 = "ctf1"; 
+
+level_2 = "ctf2"; 
+
+level_3 = "ctf3"; 
+
+level_4 = "ctf4"; 
+
+level_5 = "ctf5"; 
+
+level_6 = "ctf6"; 
+
+level_7 = "ctf7"; 
+
+level_8 = "ctf8"; 
+
+level_7 = "ctf2m1"; 
+
+level_8 = "ctf2m2"; 
+
+level_9 = "ctf2m3"; 
+
+level_10 = "ctf2m4"; 
+
+level_11 = "ctf2m5"; 
+
+level_12 = "ctf2m6"; 
+
+level_13 = "ctf2m7"; 
+
+level_14 = "ctf2m8"; 
+
+level_15 = "none"; 
+
+level_16 = "none"; 
+
+level_17 = "none"; 
+
+level_18 = "none"; 
+
+level_19 = "none"; 
+
+level_20 = "none"; 
+
+level_21 = "none"; 
+
+level_22 = "none"; 
+
+level_23 = "none"; 
+
+level_24 = "none"; 
+
+level_25 = "none"; 
+
+  
+
+You will also set your custom level names here if you have any.  In addition, set a "description" for the map which is its full name.
+
+Example (with some made-up map names):
+
+custom_1 = "lilmap"; 
+custom_1_description = "Littlemap";
+
+custom_2 = "kaboom"; 
+custom_2_description = "KaBoom CTF"
+
+custom_3 = "prtyhrty"; 
+custom_3_description = "Party Hearty";
+
+custom_4 = "none"; 
+custom_4_description = "N/A";
+
+custom_5 = "none"; 
+custom_5_description = "N/A";
+
+custom_6 = "none"; 
+custom_6_description = "N/A";
+
+custom_7 = "none"; 
+custom_7_description = "N/A";
+
+custom_8 = "none"; 
+custom_8_description = "N/A";
+
+custom_9 = "none";
+custom_9_description = "N/A";
+
+custom_10 = "none";
+custom_10_description = "N/A";
+
+custom_11 = "none";
+custom_11_description = "N/A";
+
+custom_12 = "none";  
+custom_12_description = "N/A";
+
+
+Thats all the qc files you will have to modify, after you set these variables run your QuakeC compiler in the progs directory.  This will create the
+progs.dat for the server, next you’ll have to set the samelevel and other server settings in the autoexec.cfg. 
+
+The samelevel variable works like the teamplay one in CTF.  Add up the features you want, and the total is your samelevel setting.  Most likely,
+you'll want to run "samelevel 7".  (you want the server to run in non-clanring mode by default, and have it switch to clanring when you need it for
+competition)  
+
+TEAM_HEALTH_PROTECT = 1; // No health damage from friendly fire 
+
+TEAM_ARMOR_PROTECT =  2; // No armor damage from friendly fire 
+
+TEAM_DROP_ITEMS =  4;// Allow players to drop packs and weapons 
+
+CLANRING_MODE =  8;// Clanring competition mode 
+
+TEAM_STATIC_TEAMS  = 16;//Don’t allow players to change teams in Skirmish mode  
+
+FLIMIT_MODE =  32;  // If in CR mode we end match by frags 
+
+TLIMIT_MODE =   64; // If in CR mode we end match by time 
+
+When you set the hostname it would proable be helpful to put “CRCTF 2.8” somewhere in the name.  And when you set the teamplay variable in  
+the server.cfg or autoexec.cfg make sure you have teamplay 1?CRCTF so it will work with the included Qspy tab. 
+
+  
+
+Commands - Players 
+
+Red(implse 233) ==> Sets player color to 4. 
+
+Blue(impulse 234) ==> Sets player color to 13. 
+
+Ready(impulse 40) ==> this signals the server that you are ready to play and you'd like to be placed on a team.  It will then place you on a team if
+you pant color matches one of the team pant colors, or it will create a new team if it doesn't.  You cannot join a team when you pants color is white. 
+If you receive the error "Invalid Color" you either have white pants or there are already 2 teams and your color doesn't match either of them.  Use
+"playerlist" to see the existing team colors.  The ready command will also give you your 3 digit ghost id code, you will need this code if you get
+disconnected and you try to re-enter the game.  Note:  When all players on a server have joined teams and the game is not being run by an
+observer, the game will automatically start at 1 minute countdown, once this is up, the match will begin. 
+
+NotReady(impulse 41) ==> this says that you're not happy with your current team.  It will remove you from your team and eliminate your team if you
+were the last person remaining.  It will also stop the countdown if the game is being run without an observer. If a match is in progress and you are
+on a team your frags will be set to zero and you will be made an observer. 
+
+Observer(impulse 42) ==> this removes you from your team and makes you an observer.  You can view the match without interferring as an
+observer.  You may also pass through doors and teleporters in observer mode.  Note:  If you join a match in progress or if the match starts and you
+do not have a team, you will automatically be made an observer.  You can type "Ready" to join a team if you are an observer, even if match is in
+progress. 
+
+Camera(impulse 171) ==> this removes you from your team and makes you a camera.  You can view the match without interferring as an observer. 
+Jump will let you move between cameras. 
+
+Playerlist(impulse 80) ==> a very valuable command, this allows you to see the status of everyone on the server and to see what the pant colors of
+the existing teams are.  It will also denote who is and admin as well as observer. 
+
+Ghost(impulse 50) ==> this command allows you to rejoin a game as yourself if you get disconnected from the server.  The game will then prompt
+you for your 3 digit code that you were given when you typed "ready".  
+
+Warp(impulse 48) ==> allows changing of levels.  If you are not an admin, you need the approval of half of the people on the server, or a minimum
+of 3 people to change levels.  After you type in "warp" and hit enter, you will be given a episode listing type in the episode number and hit enter
+and then hit the level number.  It will then request that the remaining people on the server confirm that this is where you want to go.  Once a
+sufficient number of people have typed "yes" at the console, the level will change.  Note:  Episode 5 are the deathmatch levels, Episode 6 is the
+ctfstart level, Episode 7 are the CTF 3.x levels, Episode 8 are the CTF 4.x levels, and Episode 9 are your custom levels. 
+
+Commands(impulse 99) ==> gives a listing of all available commands. 
+
+Admin(impulse 51) ==> initiates admin authorization sequence.  You are prompted for the 4 digit code.  If you are unsuccessful at typing the code
+more than a couple times, the game assumes you are trying to hack the server and disconnects you.  If you are already an admin, you will become a
+normal observer. 
+
+Score(impulse 76) ==> tells you the current score. 
+
+ViewRecord(impulse 44) ==> tells the scores and playerinfo from the previous match. 
+
+ModStatus(impulse 49) ==> gives information about current settings. 
+
+AutoCam(impulse 173) ==> engages AutoCam system which will switch you to the most interesting camera every 30 seconds. 
+
+PlayerStats(impulse 81) ==> Gives stats about players, such as kills, deaths, friendly kills, enemy kills. 
+
+ClanStats(impulse 82) ==> Gives stats about players, such as kills, deaths, friendly kills, enemy kills. 
+
+WeaponStats(impulse 83) ==> Gives stats about your ammo usage, how much damage potential you've fired and how much damage you've actually
+inflicted, and the percentage. 
+
+Efficiency(impulse 84) ==> Gives efficiency ratings about players, currently kill efficiency and ammo efficiency. 
+
+BackPack(impulse 20) ==> Drops a backpack with some ammo. 
+
+Weapon(impulse 21) ==> Drops the currently selected weapon. 
+
+Flagstatus(impulse 23) ==> Gives the status of each of the flags. 
+
+StatDump(impulse 43) ==> Toggles whether or not you will receive a stat summary at the end of the match. 
+
+Timerstart(impulse 130) ==> Initiates Timer Override Function.  If done by an admin it sets 10 minutes of rally time, non-admin 1 minute. 
+
+Identify(impulse 141) ==> Binding to a key allows you to id whoever you are looking at. 
+
+AutoWeapon(impulse 248) ==> Toggles whether or not you will automatically ready a weapon when you pick it up. 
+
+Warplist(impulse 235) ==> Gives you a episode listing as when you enter the warp command. 
+
+AutoCam (impulse 173) ==> Engages AutoCamera Mode.  AutoCamera allows Observers to catch the most exciting events of a match by switching
+to the best Camera Spots of the level and following the action for you.  Hands free spectating.  Acts much like Camera men at 
+     sporting events.  
+
+ChaseCam (impulse 201) ==> This removes you from your team and enters you into ChaseCam 
+     Mode.  In this Observer Mode, you follow behind the selected player at an over the shoulder 
+     perspective.  Similar to the view of some third-person games like Tomb Raider.  Pressing Jump 
+     will switch between players.  
+
+AutoChase (impulse ) ==> This is an automated version of ChaseCam, in which the game 
+     automatically follows the most exciting player to watch.  
+
+QuakeTV (impulse 207) ==> Toggles QuakeTV system which is a combination of AutoChase and 
+     AutoCam.  
+
+AutoWeapon (impulse 87) ==> Toggles AutoWeapon Switching Modes.  OFF = No autoweapon 
+     switching period.  SMART = Changes to weapon when you pick it up or get ammo for it, except 
+     lightening gun under water, and it will not switch to explosive weapons when you pick up a back 
+     pack.  ON = Normal Quake AutoWeapon Switching.  
+
+Vkick (impulse252) ==> Allows players to kick other players off the server by a majority vote.  Skirmish mode only. 
+
+Smooth(impulse205)==>Uses some packet editing to "smooth out" the Chasecam view. 
+
+Freelook(impulse209)==>Allows you to guide your own viewpoint, much like holding the fire button in Faq-proxy. 
+
+Statusbar(impulse70)==>Turns off the CTF and QuakeTV status bars, use impulses 71 to 81 to set it back.  They carry the same value as in native 
+3wave ctf. 
+  
+  
+
+Commands - Admin 
+
+Timerstart(impulse 130) ==> starts the game timer with a  10 minute rally time. 
+
+Tlimit(impulse 142)  ==> In Clanring mode it will affect the current timer (rally or match), in skirmish mode it will set the level change time. 
+
+Flimit(impulse 144) ==> Sets the fraglimit in any 3 digit number. 
+
+.Skick(impulse 75) ==> initiates kick routine.  game will then display the names of those on the server one by one.  Use the "Yes" and "No"
+commands for each player. 
+
+Showscore(impulse 200) ==> shows the current clan score to everyone on the server. 
+
+Score(impulse 76) ==> shows the current clan score to you. 
+
+Ghostlist(impulse 160) ==> gives you a listing of all ghosts in database. Information displayed is the id code, clan number, and number of frags. 
+Note:  all ghost data is cleared at start of match. 
+
+Playerlist(impulse 154) ==> same as listed in player commands. 
+
+Clearclans(impulse 161) ==> clears all clan information, including removal of all individuals from each clan and removal of clan color information. 
+
+Warp(impulse 48) ==> same as in player commands, except that level change is instantaneous since approval of other players is not required. 
+
+Commands(impulse 99) ==> listing of currently available commands. 
+
+Dmset(impulse 68) ==> Toggles between deathmatch modes. 
+
+Modeset (impulse 147) ==> Toggles between skirmish and clanring modes. 
+
+Timerpause(impulse 45) ==> freezes the timer and all players. 
+
+ViewRecord(impulse 44) ==> tells the scores and playerinfo from the previous match. 
+
+Lockout(impulse 46) ==> toggles whether players can join a match in progress. 
+
+Lockmax(impulse 47) ==> toggles the number of players that can be on a team, available values are between 2 and 8. 
+
+ModStatus(impulse 49) ==> gives information about current settings. 
+
+MakeCam(impulse 170) ==> creates a camera at your current position with the first available number. 
+
+RemoveCam(impulse 172) ==> removes the current camera. 
+
+Efficiency(impulse 84) ==> Gives efficiency ratings about players, currently kill efficiency and ammo efficiency. 
+
+StatDump(impulse 43) ==> Toggles whether or not you will receive a stat summary at the end of the match. 
+
+Camera(impulse 171) ==> This removes you from your team and makes you a camera.  You can view the match without interferring as an observer.
+Spacebar will let you move between cameras. 
+
+Aimset(impulse 150) ==> Toggles SV_AIM between 0.93 and 2. 
+
+Runset(impulse 184) ==>Set the SV_MAXSPEED to any 3 digit number. 
+
+Dropset(impulse 148) ==> Whether or not players are allowed to drop backpacks and weapons. 
+
+Protectset(impulse 147) ==> Toggles between the team protect modes, armor, health or both. 
+
+StaticTmSet(impulse 151) ==> Whether or not players are allowed to change teams in Skirmish mode.                                                             
+
+MatchEnd(impulse 133) ==>Ends a match in progress. 
+
+MatchSet(impulse 135)==> In Clanring mode it will toggle the conditions a match ends, Timelimit, Fraglimit, or both Timelimit and Fraglimit.  This is 
+
+alos set in the samelevel variable.
+
+SetPent(impulse 54)==> Toggles the Pentagram of Protection
+
+SetQuad(impulse 53)==> Toggles the Quad Damage
+
+SetEyes(impulse 55)==> Toggles the Ring of Shadows
+
+SetRunes(impulse 56)==> Toggles the presence of the CTF runes
+
+Reset(impulse 52)==> Restarts the level you're currently on.

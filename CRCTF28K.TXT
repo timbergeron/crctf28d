@@ -1,0 +1,381 @@
+Title    : ClanRing CTF Home Server
+Filename : crctf28.zip
+Version  : 2.8D
+Date     : 1/21/98
+Author   : John Bock (Disciple)/Steven Possehl (Marmot)/Joel Baxter (Lemurboy)/Chris Thielen (Someone)
+Email    : jbaxter@lemur.stanford.edu
+Credits  :
+id software, for being responsible for the complete disappearance of any
+freetime in my life
+This mod is based off the original Clanring Mod done by Crowbar.
+The original Clanring Mod included code from other sources, including 
+the observer code from ServerModules by Johannes Plass.
+All changes made to the Clanring Mod by myself are entirely our own work
+with one exception.  In the camera observer code, the camera following 
+code is from Air's Quake Cam by Paul Jordan.  This pertains only to the
+several lines of code that govern the camera angle setting to match the
+direction to the target.
+The CTF portion of this mod is property of Zoid.  Great effort has been
+taken to minimize changes to the ThreeWave CTF.  Why mess with perfection?
+Steven Possehl for doing this in the first place.  Thanks Steve!
+Lemur, giZ, and Someone for decreasing my workload so the mod could actually be done
+on time.  And everyone who helpped work out the bugs.  And the people that send me suggestions for 
+new features, usually its not a prob so bug me about it and I'll put it in.
+
+04/21/97
+Clanring Home server for Threewave CTF 4.0 first version.
+Adds support for new rune mods, scoring status, and use of new CTF episode 2 maps.Rav
+
+04/23/97
+Version 2.1
+Added warp support for all id maps as well as custom ctf maps.
+Added impulse 141, CTF ident, enables to identify who you are targeting.
+Made DMset impulse 181.
+Removed (-ClanRing CTF 4.0-) message.
+Enlarged Flag protect radius from 400 to 600, in support of larger maps.  Can be changed,
+see below.
+Started to put in the Give Rune admin command from CTF 4.0.  Stopped when realised how 
+useless it was.  Will start again if someone wants it.
+Used VaderFlag's modifications to the items.qc, when picking up a backpack if it contains
+a RL or GL you will no longer auto-switch to it.
+Made episode 6 ctfstart.bsp as opposed to start.bsp, minus the voting system.  CR warp 
+negates the need for it, but if someone wants it in...
+-Disciple
+
+04/27/97
+Version 2.2 *beta*
+Before I say anything this is still rough so just tell me whats broke and I'll fix it.
+Fixed hook suicide bug.
+Added admin command RunSet, toggles maxspeed 320, 420
+Added Identify, Impulse 141 from CTF4.
+Fixed All of the player obituaries.
+Changed observer mode a little.
+Added aliases nr and re, just a shortcut to typing out Notready and ready.
+You can now Notready in the middle of a match.
+When you go admin you "say" it, so it will show in Winquake dedicated console, so you know when people get admin.
+Removed "dioz" code.
+Added commands Red and Blue, timesaver pretty much.
+Added a listing to the warp command, and a seperate Warplist command.
+Started to add Matchend command, ends a match in progress, will do all the normal match ending stuff, but right now all it does it timerstop.
+Jeez what else, like a ton of other little things here and there.
+Added giZ's great autoweapon commmand.
+More little changes.
+And some more unlisted commands.
+Included ProQCC instead of the old qcc.
+-Disciple
+
+05/01/97
+Added some more stuff
+All commands now have short forms too, so instead of typing in "timerstart" you just type ts.
+Took out the autoexecing of the cfg files when you ready up, observer mode doens't look as good but
+it caused too many probs.
+Some other things i forgot about, it plays a-ok now, next up I put in new features.
+-Disciple
+
+05/02/97
+Added a heavly modified version of the status bar from CTF 4.1.
+Notice:Run the server in clanring mode only for now, there is a bug where if you switch from 
+skrimish mode to clanring mode, you respawn where you died, so while the rally timer is counting down, you
+can just run over to the enemy flag and respawn on top of it. =(
+-Disciple
+
+05/05/97
+Some people were getting z_malloc errors, prolly cause of all the extra bindings I put in (50),
+so now all commands are shortened form only.  Cleaned up some more stuff... Addding the support for 
+res's other than 300x200 with the status bar from ctf4 prolly tommorow.
+-Disciple
+
+05/09/97
+Ok the commands are back to the old form, and all (I hope) of the bugs are out.  I have more stuff to add to the mod, but
+I feel like I'm getting lazy with giZ putting a new version out every day =) Some little changes you'll prolly notice but aren't worth mentioning.
+-Disciple
+
+05/12/97
+Added Lemurboy's changes to Status bar scoring.
+Added team color changes from giZ.
+Some other little stuff. (lots of little things in this mod huh?)
+-Disciple
+
+05/15/97
+Made impulse 69 function as it does in native ctf.
+Took out the timerstop doing a matchend, heh it would set up the server in a loop where after a match 
+you went to another match right away.
+Lemurboys rocks!  He just sent me a nice update and cut down on my workload =)
+LB put in the ability to select teams in skirmish mode as TEAM_STATIC_TEAMS as a samelevel var, add 16 to the samelevel to keep teams static in skrimish.
+Impulse 70 from zoids ctf code added, status bar off/on
+-Disciple
+
+05/20/97
+Added Ilkka Rajala's (Faq-Proxy guy) botkick.qc with some changes, it will never kick someone it thinks is using a bot just beacuse
+I was able to trigger it once or twice by moving very erratically, now all it does is say "player is exhibiting bot-like behavior"
+If someone triggers this once a game he's probably not using a bot, but if it goes off mulitiple times it's a good bet he is.
+Added all of the camera modes from the dm mod, chasecam, autocam etc.
+-Disciple
+
+05/25/97
+2.2f
+Added chasecam and QuakeTV, increased PLS to 50 levels, in skirmish you are not made observer 
+when you go admin, Lemur fixed the ghost code, StatusBar Res impulses added (same as 3wave ctf),
+Some other small stuff.
+-Disciple
+
+05/26/97
+2.2g 
+Added Someone's new Flimit, Timelimit, Matchlength, Kick, and Vkick routines.
+2.2h
+Added Matchset stuff from Someone.
+2.2i
+Added sliding fix, red and blue readies again.
+Added USE_PLS in settings.qc, a value of 1 will use the 50 level crpls (user defined), 0 will use the ctf default.
+Added the 3wave start map mods, voting system etc.
+Added CORPSES in settings.qc, whether or not bodies hang around.
+2.2j
+Lots and lots of fixes and polishing for commands, getting in and out of
+games and modes, observer and admin stuff, etc.  See changes.txt.  Skirmish
+mode is now a lot more solid.
+2.2k
+Fixed various uses of the "teamplay" var that were semantically out-of-date,
+changed the sense of TM_SV_AIM to correspond with that in the "normal" CR
+code; fixed CycleWeaponCommand.
+2.2l
+Fixed a few 2.2k boo-boos.  Mainly tinkering with CTFstart to get it to
+work, both in CR mode and skirmish mode.
+2.2m
+Cut down the number of calls to cvar("samelevel") in the main game loop to
+try to speed things up.  Also got rid of some bitwise ands.
+2.2p
+Um someone asked me for the newest version so here it is! I updated the server.htm doc, so check it out before asking any questions.
+-Disciple
+
+07/21/97
+2.3
+Well heres version 2.3 in all it's glory!
+
+08/05/97
+Added the powerup toggles from giZ's e3 version of the Clanring mod, allows you to turn off
+Quad, Pent, and Ring of Shadows.
+08/07/97
+Added Qsmack supprt, see http://lemur.stanford.edu/clan9/qsmack/ for deatails on usage.
+08/09/97
+Fixed something, but I just forgot what it was.
+Added NORUNES to settings.qc
+No more vkick in Clanring mode, observer join menu removed in clanring mode.
+Fixed the observer impulse 69 thingee
+took out logging becuse it was cuasing probs :/
+
+Too lazy to look at the date /00/00/00
+Ok, well the efficeincy, plqayerlist stuff is back in, the only thing removed is the match 
+end statdump.  Noone ever looked hard at it anyway.
+Corrected some qsmack related errors pointed out to me by Lemurboy.
+Still trying to get the runespawn fixed.
+When it is fixed, runes don't spawn until match starts, then that will be CRCTF2.5.
+That alone should make a big change in the way clans play, and remove alot of the 
+junk before a match starts.
+
+08/26/97
+-Lemur come though again!
+Thanks to Lemurboy the runes now behave correctly, this means no more delaying to wait for the runes to spawn by your base etc.  Crctf matches should be alot more fun now.
+Thanks Lemur!
+
+11/26/97
+You're welcome! :-)
+In 2.6 I fixed a couple of things that had been annoying me:
+- Got rid of the "name bug" security hole, although hopefully you'd already patched your server to fix this.
+- Incorrect flag status and capture messages were STILL being sent to observers... geez... I think I got it right this time.
+- If you go admin, and you're already an observer, don't re-become an observer; this is annoying if (for example) you are in chasecam.
+- Made warp now describe the episodes and levels available for you to pick from.  Description of custom levels (BTW there can now be up to 12) is patterned after the ClanRing code by Paul Baker.
+- Made start map voting actually work.
+
+Found out that there was a "2.5r" version in use by LOC, and merged and debugged those changes.  This added a new command "SetRunes" (from Disciple).
+
+I also added OPTIONAL support for Expansion and/or All-Star CTF maps, in warping and in the skirmish level progression.  In settings.qc, you now need to set EXPANDED_MAPS appropriately; see the comments there.  I did the warp code changes to support this, and Apocalypse[IG] gave me the base code for the skirmish cases. 
+NOTE: fastqcc seems to have problems with this latest version.  If it is giving you grief, use a simpler compiler like qccdos instead.
+
+
+01/02/98
+Added another Xeno CTF level, expctf2, as map 9 in the episode.  xeno5 has also been renamed expctf1.  I THINK (but don't quote me) that the file itself has just changed names, so if you already have xeno5 you could just rename it to expctf1.  But to be safe I recommend you re-download expctf1 from the All-Star site.
+
+
+1/21/98
+2.8: SomeOne[LpL] fixed the bug that was disabling reverse weapon cycling.
+
+
+1/29/98
+2.8D: I (SomeOne) spend a few hours on the mod and did some changes. The teleporter bug (e4m5) is fixed (thanx lemur) I made it easier to get in and out of QTV and Chasecam and Autochase and Autocam etc... When in observer mode, it will tell you who you're peepin at (idea and Zoid's code bugfix taken from Expert Quake/Arena) When you peepin at somebody, press fire and you're in chasecam mode on them.  Press fire again, and you go to observer mode right where you are. Makes it nice for observing matches and following the action.  Made AutoCam and Chasecam display player status on the normal quake status bar. Mebbe i did some other things too but i forget.  So.  Who wants to do a total rewrite of CRCTF? It could use it.  Its nice when the observer code is scattered in 4 or 5 different files including some very important observer code in admin.qc (?) Well... ok i'm done rambling.
+
+2/5/98
+2.8E: I (SomeOne) spent a few hours on the mod and did some changes. No longer can you cheat by switching colors before match start. RL/LG suicides now are tallied in final score and efficiency.  People just joining match in progress are spawned in base (after typeing ready).  QUAD/PENT/EYES/RUNES can be toggled on and off by vote (same impulses as admin). I'm letting people have 2.8E right away cause they need it for CTF Classic Tourney. Look for improved autochase in 2.8F...
+
+2/16/98
+2.8G: again, spent some time. Clanring scoring is now fixed (no suicides were being kept track of until about 2.8d and no world deaths (spikes, drowning, lava) were being kept track of until now). Changed the autochase criteria to be based on a points system, where certain things will make certain targets more likely to be chased. eg; quad, flag carrier, looking at enemy flag carrier, runes, rl + ammo. HMM ok i think that's it, probably not though, since i am so absent-minded.
+
+2/26/98
+2.8H: fixed up some little bugs... How in the world... OK, resistance rune wasn't protecting armor.  wait. that's the only bug i fixed.  Oh well. But i changed matchstart and end so it doesn't gib you for 2 reasons, to not lag the puny modemers, and to rid your console of all those "player died" messages. at matchend, it is annoying, cause you want to be able to see the final score, but playerdie messages come after that.
+
+3/6/98
+2.8I: fixed up some bugs, some that I added in 2.8H, changed spawn to similiar to suicide, fixed matchend score output (was displaying correct scores, but wrong team color and wrong "win/loss") and made it stop adding one extra frag to compensate, no longer needed.  Uh... one other thing, i forget. 
+
+5/12/98
+2.8J: well, now I've got a problem.  I've seen some demos where one team will get an extra 10 points added for each capture.  My theory is that it is either giving the flag carrier the 15 point bonus, then not realizing that the flag carrier IS the flag carrier and giving the extra 10 point bonus when handing out the team bonuses, or there is an extra player entity somewhere that has its team value set to something valid.  This bug is gonna be hard to track down. I've patched teamplay.qc for the first possibility.
+
+6/9/98
+2.8K: Wow, we're getting up there in the letters!  K, added support for the LOC Map Pak 1.0 ... Since the majority of servers that use CRCTF are LOC servers, why not make the map pak officialy supported. (just tacked it on, in the true spirit of CRCTF coding) (oh yeah, prolly introduced some more bugs, also in the true spirit of CRCTF coding).  Thought about (for a minute or two) the reported warp bug, where it goes to the wrong map and maybe i fixed it.. maybe not, but from the description of the problem this should do the trick.  Enjoy. or something.   Also noticed a bug where you can't warp to the start map, but i am tired.
+
+-----------
+Quake C  : yes
+Sound    : no
+MDL      : no  
+
+
+Format of QuakeC (if a Quake C Mod)
+-----------------------------------
+unified diff  : no
+context diff  : no
+.qc files     : yes
+progs.dat     : yes
+
+Description of the Modification
+-------------------------------
+
+This meant to be a "Clanring CTF Home Server", a 
+server that was meant to be run on non-clanring servers, but
+could be used as a Clanring server when needed.  This mod is
+designed to work as a standard CTF server 70% of the time, and
+a clanring CTF server 30% of the time.
+
+This server was designed for a much larger target audience than
+the earlier clanring mod's.  I intend this mod to have features 
+that would cause people to choose to use it, rather than be 
+forced to use it as before.  Some of the clanring features 
+are available even in non-clanring modes, and these features 
+are a great asset to the game, such as admin's changing 
+deathmatch modes, observer mode, players or admin's changing 
+levels, kicking of players, etc.  See the Server.html for full
+details on all the features of Clanring CTF.
+
+I intend this mod to be used to clans for their non-clanring 
+clan matches, skirmishes, practices or as a FFA server when 
+no clan activity is currently going on.  For this reason, I 
+need a great deal of feedback on features that you think 
+this mod should have, in addition to bug reports.
+
+
+How to Install the Modification Ver2.8
+--------------------------------------
+04/21/97
+Create a directory under your quake directory called crctf
+Install ThreeWaveCTF 4.0 into crctf.  Make a seperate dir called
+progs, use this for compiling your progs.  Make all the changes you
+need to, in the setting.qc etc.  Run qcc, and copy the new progs.dat over
+the one in your crctf dir. See server.doc for additional help.
+Run the following option:
+winquake -game crctf dedicated 16
+
+
+Technical Details
+-----------------
+
+The organizational structure of this mod is based upon watching
+monkies in a zoo run around and punch each other.
+
+Technical Details Ver2.1
+------------------------
+Warp Episode numbering:
+
+Episode 1
+id's e1m1-e1m8
+Episode 2
+id's e2m1-e2m7
+Episode 3
+id's e3m1-e3m7
+Episode 4
+id's e4m1-e4m8
+Episode 5
+The Deathmatch Arenas
+id's dm1-dm6
+Episode 6
+CTF ctfstart
+Episode 7
+CTF Episode 1 ctf1-ctf8
+Episode 8
+CTF Episode 2 ctf2m1-ctf2m8
+Episode 9
+Custom Levels
+
+
+As of Ver2.6, the server can support Expansion levels and/or All-Star levels as well.
+The "Custom Levels" episode is always the last one.
+
+If Expansion levels only:
+
+Episode 9
+Expansion Levels
+Episode 10
+Custom Levels
+
+
+If All-Star maps:
+
+Episode 9
+Expansion Levels
+Episode 10
+Thunderwalker Levels - One
+Episode 11
+Thunderwalker Levels - Two
+Episode 12
+Xeno Levels
+Episode 13
+Custom Levels
+
+Get those All-Star maps installed on your server!
+
+
+
+Author Information
+------------------
+
+This would be the first qc mod I worked on, basically the only reason I started
+was after CTF4 came out I was waiting for the Clanring version to come out, when it did
+I was kinda er, disappointed, so I just jumped in and fixed what I thought needed to be fixed.
+After that I had some ideas for new stuff, started talking to giZ, and then just took over and
+started working on it.
+
+
+Copyright and Distribution Permissions
+--------------------------------------
+
+The modifications included in this archive are Copyright 1997 and 1998,
+John Bock, Joel Baxter, "Someone" and Steven Possehl. The original QuakeC source is Copyright 1996,
+id software.
+
+Authors may use these modifications as a basis for other
+publicly or commercially available work.
+
+No modification can be made to this patch with the exception
+of the settings.qc file
+
+You may distribute this Quake modification in any electronic
+format as long as all the files in this archive remain intact
+and unmodified and are distributed together.
+
+You may not include this Quake modification on a CD or other
+collection without the written consent of this author.
+
+This patch may be run on a quake server under the following
+conditions:
+	A:      No fee may be charged for the use of the server,
+		either directly or indirectly
+	B:      The words "Running Clanring CTF Home Server v2.8" 
+		must appear in the second line of the greeting
+
+You may post this Quake modification on a server, such as
+a WWW or FTP server.
+
+
+Availability
+------------
+
+The mod is available on the ClanRing files page at MPOG:
+http://www.mpog.com/files/qcr_index.html
+
+

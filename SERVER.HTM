@@ -1,0 +1,708 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="NetObjects Fusion Trial 2.0 for Windows">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (Win95; I) [Netscape]">
+   <TITLE>CTF1</TITLE>
+   <BASE TARGET="_parent">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080">
+&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="800" >
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD WIDTH="783"><IMG SRC="dot_clear.gif" HEIGHT=1 WIDTH=783></TD>
+
+<TD WIDTH="17"><IMG SRC="dot_clear.gif" HEIGHT=1 WIDTH=17></TD>
+
+<TD WIDTH="0"></TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD COLSPAN="3" HEIGHT="9"></TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD WIDTH="783">
+<CENTER><B><U><FONT COLOR="#0000FF"><FONT SIZE=+3>Clanring CTF Home Server
+v2.8</FONT></FONT></U></B></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+
+<P><B><U><FONT COLOR="#0000FF"><FONT SIZE=+2><A HREF="../html/introbodyctf1.html">Introduction</A></FONT></FONT></U></B>&nbsp;
+
+<P><B><FONT SIZE=+2><A HREF="../html/setupbodyctf1.html"><U><FONT COLOR="#0000FF">Basic
+Setup</FONT></U>&nbsp;</A></FONT></B>&nbsp;
+
+<P><U><FONT COLOR="#0000FF"><A HREF="../html/contbodyctf1.html">Contents</A></FONT></U>&nbsp;
+
+<P><U><FONT COLOR="#0000FF"><A HREF="../html/setupbodyctf1.html">Instructions-Setup</A></FONT></U>&nbsp;
+
+<P><B><U><FONT COLOR="#0000FF"><FONT SIZE=+2><A HREF="../html/playbodyctf1.html">Commands
+Player</A></FONT></FONT></U></B>&nbsp;
+
+<P><B><U><FONT COLOR="#0000FF"><FONT SIZE=+2><A HREF="../html/adminbodyctf1.html">Commands
+Admin</A></FONT></FONT></U></B>&nbsp;
+
+<P>&nbsp;
+<BR><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>The
+Clanring CTF Home server gives clans a enhanced way to play matches, a
+rally timer for even starts, enhaced stats and scoring and easily accessable
+server settings with a simple 4 digit admin code.&nbsp; It can also function
+as a regular Threewav CTF4 server in skirmish mode while giving the ability
+for players to warp to any level they choose.&nbsp; Most servers will prolly
+be set to run in skirmish mode on the servers public port and in Clanring
+mode on the private port.&nbsp;</FONT></FONT>&nbsp;
+<BR>&nbsp;
+
+<P><B><U><FONT COLOR="#0000FF"><FONT SIZE=+1>Basic Setup</FONT></FONT></U></B>&nbsp;
+
+<P>What you get in the crctf2x.* file:&nbsp;
+
+<P>This document in html format and MS Word format.&nbsp;
+
+<P>The crctf2x.txt file with basic info and version updates.&nbsp;
+
+<P>A progs folder containing all the Crctf qc files.&nbsp;
+
+<P>Fastqcc.exe, the best qc compiler avaliable today.  NOTE: fastqcc MAY have problems compiling the latest version of CRCTF.  For this reason it is currently not included in this archive.  If you experience problems with it, use a more basic compiler like qccdos.&nbsp;
+
+<P>A sample autoexec.cfg for the server itself.&nbsp;
+
+<P><A NAME="setup"></A><U><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT COLOR="#0000FF"><FONT SIZE=+1>Instructions
+- Setup</FONT></FONT></FONT></U>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>There
+are only a couple steps that need to be taken to setup a clanring server.&nbsp;
+This setup is done by setting a couple of variables and recompiling the
+server code.&nbsp; All settings are located in the settings.qc file.&nbsp;
+These settings are as follows.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">ADMIN_CODE_REAL</FONT></B>
+==> the 4 digit code used to get admin powers</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">LOCKOUT</FONT></B>
+==> Default value for lockout&nbsp; 1 enables, 0 disables</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">LOCK_NUM</FONT></B>
+==> Default value for lockmax, 2 => 8&nbsp;&nbsp; 0 disables</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">DEBUGGING
+</FONT></B><FONT COLOR="#000000">==> Do not turn this on unless testing,
+removes all security from server.</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">TEAM_CAPTURE_CUSTOM</FONT></B>
+==> 1 enables, 0 disables.&nbsp; This is the custom Threewave CTF files,
+you want to run this, except under extremely rare circumstances.&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">OBSERVER_ENTRY</FONT></B>
+==> 1 enables, 0 disables.&nbsp; Whether or not you enter the server as
+an observer.&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">FORCE_RESPAWN</FONT></B>
+==> the number of seconds till players are automatically respawned, 0 disables</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">LOCK_LEVEL</FONT></B>
+==> locks the game onto a single level 1 enables, 0 disables</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">TM_SV_AIM</FONT></B>
+==> if sv_aim 0.93 should be used in teamplay; 1 enables, 0 disables</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">OVERRIDE_VOTES</FONT></B>
+==> percentage of players needed to start timer with override function</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">AUTO_RESPAWN
+</FONT></B><FONT COLOR="#000000">==> How long before a player auotmatically
+respawns.&nbsp;</FONT></FONT></FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT FACE="Times New Roman,Times"><FONT COLOR="#006600">USE_PLS
+</FONT><FONT COLOR="#000000">==></FONT><FONT COLOR="#006600"> </FONT></FONT></B><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT COLOR="#000000">1
+if the PLS (see below) should be used, 0 for CTF default. Skirmish mode</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#006600">CORPSES
+</FONT></B><FONT COLOR="#000000">==>1 if you want the dead bodies around,
+0 to have a clean floor</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#006600">NORUNES
+</FONT></B><FONT COLOR="#000000">==>1 for no runes, 0 for runes</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#006600">EXPANDED_MAPS
+</FONT></B><FONT COLOR="#000000">==>0 if you only have the Threewave maps, 1 if you only have Threewave + Expansion, 2 if you have the complete All-Star map set (recommended).</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>&nbsp;The
+next things you want to take care of are the server greeting messages,
+what a player sees when he connects.&nbsp; The greeting can be anything
+you want as long as it contains the string “Running Clanring CTF Home Server
+v2.8” as the second line.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">SERVER_GREETING_CLANRING
+</FONT></B><FONT COLOR="#000000">==> This is what a player will see if
+entering in Clanring mode.</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">SERVER_GREETING_RED
+</FONT></B><FONT COLOR="#000000">==> This is what the player will see if
+entering while the server is in skirmish mode and is put on the red team.</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">SERVER
+_GREETING_BLUE </FONT></B><FONT COLOR="#000000">==> This is what the player
+will see if entering while the server is in skirmish mode and is put on
+the blue team.</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">SERVER_GREETING_OBSERVER_CR
+</FONT></B><FONT COLOR="#000000">==> This is what the player will see when
+entering as an obserever in Clanring mode</FONT></FONT></FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT FACE="Times New Roman,Times"><FONT COLOR="#006600">SERVER_GREETING_OBSERVER_SK
+</FONT></FONT></B><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT COLOR="#000000">==>
+This is what the player will see when entering as an obserever in Skirmish
+mode</FONT></FONT></FONT>&nbsp;
+<BR>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>Next
+you’ll want to set the level sequence, you get to run through 25 levels,
+if you don’t have 25 levels you want to cycle through just put&nbsp; “none”
+in the slot.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Example:</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=-1>level_1 = "ctf1";</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_2
+= "ctf2";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_3
+= "ctf3";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_4
+= "ctf4";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_5
+= "ctf5";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_6
+= "ctf6";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_7
+= "ctf7";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_8
+= "ctf8";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_7
+= "ctf2m1";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_8
+= "ctf2m2";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_9
+= "ctf2m3";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_10
+= "ctf2m4";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_11
+= "ctf2m5";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_12
+= "ctf2m6";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_13
+= "ctf2m7";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_14
+= "ctf2m8";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_15
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_16
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_17
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_18
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_19
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_20
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_21
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_22
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_23
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_24
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>level_25
+= "none";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT COLOR="#000000">&nbsp;</FONT>&nbsp;
+
+<P><FONT COLOR="#000000"><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>You will also set your custom level names here if you have any.  In addition, set a &quot;description&quot; for the map which is its full name.&nbsp;</FONT><BR><FONT SIZE=-1>Example (with some made-up map names):</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_1
+= "lilmap";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_1_description
+= "Littlemap";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_2
+= "kaboom";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_2_description
+= "KaBoom CTF";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_3
+= "prtyhrty";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_3_description
+= "Part Hearty";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_4
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_4_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_5
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_5_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_6
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_6_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_7
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_7_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_8
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_8_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_9
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_9_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_10
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_10_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_11
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_11_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_12
+= "none";</FONT></FONT></FONT>&nbsp;
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#000000"><FONT SIZE=-1>custom_12_description
+= "N/A";</FONT></FONT></FONT>&nbsp;
+
+<P><FONT COLOR="#000000">&nbsp;</FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>Thats
+all the qc files you will have to modify, after you set these variables
+run your QuakeC compiler in the progs directory.&nbsp; This will create
+the progs.dat for the server, next you’ll have to set the samelevel and
+other server settings in the autoexec.cfg.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>The
+samelevel variable works like the teamplay one in CTF.&nbsp; Add up the
+features you want, and the total is your samelevel setting.&nbsp; Most
+likely, you'll want to run "samelevel 7".&nbsp; (you want the server to
+run in non-clanring mode by default, and have it switch to clanring when
+you need it for competition)&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">TEAM_HEALTH_PROTECT</FONT></B>
+= 1; // No health damage from friendly fire</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">TEAM_ARMOR_PROTECT</FONT></B>
+=&nbsp; 2; // No armor damage from friendly fire</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">TEAM_DROP_ITEMS</FONT></B>
+=&nbsp; 4;// Allow players to drop packs and weapons</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">CLANRING_MODE</FONT></B>
+=&nbsp; 8;// Clanring competition mode</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#008000">TEAM_STATIC_TEAMS</FONT></B>&nbsp;
+= 16;//Don’t allow players to change teams in Skirmish mode&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#006600">FLIMIT_MODE
+</FONT></B><FONT COLOR="#000000">=&nbsp; 32;&nbsp; // If in CR mode we
+end match by frags</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#006600">TLIMIT_MODE</FONT></B><FONT COLOR="#000000">
+=&nbsp;&nbsp; 64; // If in CR mode we end match by time</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>When
+you set the hostname it would proable be helpful to put “CRCTF 2.8” somewhere
+in the name.&nbsp; And when you set the teamplay variable in&nbsp;</FONT></FONT>&nbsp;
+<BR><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>the
+server.cfg or autoexec.cfg make sure you have teamplay 1?CRCTF so it will
+work with the included Qspy tab.</FONT></FONT>&nbsp;
+
+<P>&nbsp;
+
+<P><A NAME="play"></A><U><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT COLOR="#0000FF"><FONT SIZE=+1>Commands
+- Players</FONT></FONT></FONT></U>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Red</FONT></B><FONT COLOR="#000000">(implse
+</FONT><FONT COLOR="#0000FF">233</FONT><FONT COLOR="#000000">) ==> Sets
+player color to 4.</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Blue</FONT></B><FONT COLOR="#000000">(impulse
+</FONT><FONT COLOR="#0000FF">234</FONT><FONT COLOR="#000000">) ==> Sets
+player color to 13.</FONT></FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Ready</FONT></B>(impulse
+<FONT COLOR="#0000FF">40</FONT>) ==> this signals the server that you are
+ready to play and you'd like to be placed on a team.&nbsp; It will then
+place you on a team if you pant color matches one of the team pant colors,
+or it will create a new team if it doesn't.&nbsp; You cannot join a team
+when you pants color is white.&nbsp; If you receive the error "Invalid
+Color" you either have white pants or there are already 2 teams and your
+color doesn't match either of them.&nbsp; Use "playerlist" to see the existing
+team colors.&nbsp; The ready command will also give you your 3 digit ghost
+id code, you will need this code if you get disconnected and you try to
+re-enter the game.&nbsp; Note:&nbsp; When all players on a server have
+joined teams and the game is not being run by an observer, the game will
+automatically start at 1 minute countdown, once this is up, the match will
+begin.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">NotReady</FONT></B>(impulse
+<FONT COLOR="#0000FF">41</FONT>) ==> this says that you're not happy with
+your current team.&nbsp; It will remove you from your team and eliminate
+your team if you were the last person remaining.&nbsp; It will also stop
+the countdown if the game is being run without an observer. If a match
+is in progress and you are on a team your frags will be set to zero and
+you will be made an observer.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Observer</FONT></B>(impulse
+<FONT COLOR="#0000FF">42</FONT>) ==> this removes you from your team and
+makes you an observer.&nbsp; You can view the match without interferring
+as an observer.&nbsp; You may also pass through doors and teleporters in
+observer mode.&nbsp; Note:&nbsp; If you join a match in progress or if
+the match starts and you do not have a team, you will automatically be
+made an observer.&nbsp; You can type "Ready" to join a team if you are
+an observer, even if match is in progress.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Camera</FONT></B>(impulse
+<FONT COLOR="#0000FF">171</FONT>) ==> this removes you from your team and
+makes you a camera.&nbsp; You can view the match without interferring as
+an observer.&nbsp; Jump will let you move between cameras.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Playerlist</FONT></B>(impulse
+<FONT COLOR="#0000FF">80</FONT>) ==> a very valuable command, this allows
+you to see the status of everyone on the server and to see what the pant
+colors of the existing teams are.&nbsp; It will also denote who is and
+admin as well as observer.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Ghost</FONT></B>(impulse
+<FONT COLOR="#0000FF">50</FONT>) ==> this command allows you to rejoin
+a game as yourself if you get disconnected from the server.&nbsp; The game
+will then prompt you for your 3 digit code that you were given when you
+typed "ready".&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Warp</FONT></B>(impulse
+<FONT COLOR="#0000FF">48</FONT>) ==> allows changing of levels.&nbsp; If
+you are not an admin, you need the approval of half of the people on the
+server, or a minimum of 3 people to change levels.&nbsp; After you type
+in "warp" and hit enter, you will be given a episode listing type in the
+episode number and hit enter and then hit the level number.&nbsp; It will
+then request that the remaining people on the server confirm that this
+is where you want to go.&nbsp; Once a sufficient number of people have
+typed "yes" at the console, the level will change.&nbsp; Note:&nbsp; Episode
+5 are the deathmatch levels, Episode 6 is the ctfstart level, Episode 7
+are the CTF 3.x levels, Episode 8 are the CTF 4.x levels, and Episode 9
+are your custom levels.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Commands</FONT></B>(impulse
+<FONT COLOR="#0000FF">99</FONT>) ==> gives a listing of all available commands.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Admin</FONT></B>(impulse
+<FONT COLOR="#0000FF">51</FONT>) ==> initiates admin authorization sequence.&nbsp;
+You are prompted for the 4 digit code.&nbsp; If you are unsuccessful at
+typing the code more than a couple times, the game assumes you are trying
+to hack the server and disconnects you.&nbsp; If you are already an admin,
+you will become a normal observer.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Score</FONT></B>(impulse
+<FONT COLOR="#0000FF">76</FONT>) ==> tells you the current score.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">ViewRecord</FONT></B>(impulse
+<FONT COLOR="#0000FF">44</FONT>) ==> tells the scores and playerinfo from
+the previous match.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">ModStatus</FONT></B>(impulse
+<FONT COLOR="#0000FF">49</FONT>) ==> gives information about current settings.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">AutoCam</FONT></B>(impulse
+<FONT COLOR="#0000FF">173</FONT>) ==> engages AutoCam system which will
+switch you to the most interesting camera every 30 seconds.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">PlayerStats</FONT></B>(impulse
+<FONT COLOR="#0000FF">81</FONT>) ==> Gives stats about players, such as
+kills, deaths, friendly kills, enemy kills.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">ClanStats</FONT></B>(impulse
+<FONT COLOR="#0000FF">82</FONT>) ==> Gives stats about players, such as
+kills, deaths, friendly kills, enemy kills.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">WeaponStats</FONT></B>(impulse
+<FONT COLOR="#0000FF">83</FONT>) ==> Gives stats about your ammo usage,
+how much damage potential you've fired and how much damage you've actually
+inflicted, and the percentage.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Efficiency</FONT></B>(impulse
+<FONT COLOR="#0000FF">84</FONT>) ==> Gives efficiency ratings about players,
+currently kill efficiency and ammo efficiency.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">BackPack</FONT></B>(impulse
+<FONT COLOR="#0000FF">20</FONT>) ==> Drops a backpack with some ammo.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Weapon</FONT></B>(impulse
+<FONT COLOR="#0000FF">21</FONT>) ==> Drops the currently selected weapon.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Flagstatus</FONT></B>(impulse
+<FONT COLOR="#0000FF">23</FONT>) ==> Gives the status of each of the flags.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">StatDump</FONT></B>(impulse
+<FONT COLOR="#0000FF">43</FONT>) ==> Toggles whether or not you will receive
+a stat summary at the end of the match.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Timerstart</FONT></B>(impulse
+<FONT COLOR="#0000FF">130</FONT>) ==> Initiates Timer Override Function.&nbsp;
+If done by an admin it sets 10 minutes of rally time, non-admin 1 minute.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Identify</FONT></B>(impulse
+<FONT COLOR="#0000FF">141</FONT>) ==> Binding to a key allows you to id
+whoever you are looking at.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">AutoWeapon</FONT></B>(impulse
+<FONT COLOR="#0000FF">248</FONT>) ==> Toggles whether or not you will automatically
+ready a weapon when you pick it up.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Warplist</FONT></B>(impulse
+<FONT COLOR="#0000FF">235</FONT>) ==> Gives you a episode listing as when
+you enter the warp command.</FONT></FONT>&nbsp;
+
+<P><B><FONT FACE="Times New Roman,Times"><FONT COLOR="#CC0000"><FONT SIZE=-1>AutoCam</FONT></FONT></FONT></B>
+<FONT FACE="Times New Roman,Times"><FONT SIZE=-1>(impulse <FONT COLOR="#3366FF">173</FONT>)
+==> Engages AutoCamera Mode.&nbsp; AutoCamera allows Observers to catch
+the most exciting events of a match by switching to the best Camera Spots
+of the level and following the action for you.&nbsp; Hands free spectating.&nbsp;
+Acts much like Camera men at</FONT></FONT>&nbsp;
+<BR><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;
+sporting events.&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#CC0000">ChaseCam</FONT></B> (impulse<FONT COLOR="#3366FF">
+201</FONT>) ==> This removes you from your team and enters you into ChaseCam</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; Mode.&nbsp; In this Observer
+Mode, you follow behind the selected player at an over the shoulder</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; perspective.&nbsp; Similar to
+the view of some third-person games like Tomb Raider.&nbsp; Pressing Jump</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; will switch between players.&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#FF0000">AutoChase</FONT></B> (impulse
+) ==> This is an automated version of ChaseCam, in which the game</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; automatically follows the most
+exciting player to watch.&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#FF0000">QuakeTV</FONT></B> (impulse <FONT COLOR="#3366FF">207</FONT>)
+==> Toggles QuakeTV system which is a combination of AutoChase and</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; AutoCam.&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#FF0000">AutoWeapon</FONT></B> (impulse
+<FONT COLOR="#3366FF">87</FONT>) ==> Toggles AutoWeapon Switching Modes.&nbsp;
+OFF = No autoweapon</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; switching period.&nbsp; SMART
+= Changes to weapon when you pick it up or get ammo for it, except</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; lightening gun under water,
+and it will not switch to explosive weapons when you pick up a back</FONT>&nbsp;
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; pack.&nbsp; ON = Normal Quake
+AutoWeapon Switching.&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#FF0000">Vkick</FONT></B> (impulse<FONT COLOR="#3366FF">252</FONT>)
+==> Allows players to kick other players off the server by a majority vote.&nbsp;
+Skirmish mode only.</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#FF0000">Smooth</FONT></B>(impulse<FONT COLOR="#3366FF">205</FONT>)==>Uses
+some packet editing to "smooth out" the Chasecam view.</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#FF0000">Freelook</FONT></B>(impulse<FONT COLOR="#3366FF">209</FONT>)==>Allows
+you to guide your own viewpoint, much like holding the fire button in Faq-proxy.</FONT>&nbsp;
+
+<P><FONT SIZE=-1><B><FONT COLOR="#CC0000">Statusbar</FONT></B>(impulse<FONT COLOR="#3333FF">70</FONT>)==>Turns
+off the CTF and QuakeTV status bars, use impulses 71 to 81 to set it back.&nbsp;
+They carry the same value as in native</FONT>&nbsp;
+<BR><FONT SIZE=-1>3wave ctf.</FONT>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+
+<P><A NAME="admin"></A><U><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT COLOR="#0000FF"><FONT SIZE=+1>Commands
+- Admin</FONT></FONT></FONT></U>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Timerstart</FONT></B>(impulse
+<FONT COLOR="#0000FF">130</FONT>) ==> starts the game timer with a&nbsp;
+10 minute rally time.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Tlimit</FONT></B>(impulse
+<FONT COLOR="#0000FF">142</FONT>)&nbsp; ==> In Clanring mode it will affect
+the current timer (rally or match), in skirmish mode it will set the level
+change time.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Flimit</FONT></B>(impulse
+<FONT COLOR="#0000FF">144</FONT>) ==> Sets the fraglimit in any 3 digit
+number.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>.<B><FONT COLOR="#FF0000">Skick</FONT></B>(impulse
+<FONT COLOR="#0000FF">75</FONT>) ==> initiates kick routine.&nbsp; game
+will then display the names of those on the server one by one.&nbsp; Use
+the "Yes" and "No" commands for each player.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Showscore</FONT></B>(impulse
+<FONT COLOR="#0000FF">200</FONT>) ==> shows the current clan score to everyone
+on the server.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Score</FONT></B>(impulse
+<FONT COLOR="#0000FF">76</FONT>) ==> shows the current clan score to you.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Ghostlist</FONT></B>(impulse
+<FONT COLOR="#0000FF">160</FONT>) ==> gives you a listing of all ghosts
+in database. Information displayed is the id code, clan number, and number
+of frags.&nbsp; Note:&nbsp; all ghost data is cleared at start of match.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Playerlist</FONT></B>(impulse
+<FONT COLOR="#0000FF">154</FONT>) ==> same as listed in player commands.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Clearclans</FONT></B>(impulse
+<FONT COLOR="#0000FF">161</FONT>) ==> clears all clan information, including
+removal of all individuals from each clan and removal of clan color information.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Warp</FONT></B>(impulse
+<FONT COLOR="#0000FF">48</FONT>) ==> same as in player commands, except
+that level change is instantaneous since approval of other players is not
+required.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Commands</FONT></B>(impulse
+<FONT COLOR="#0000FF">99</FONT>) ==> listing of currently available commands.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Dmset</FONT></B>(impulse
+<FONT COLOR="#0000FF">68</FONT>) ==> Toggles between deathmatch modes.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Modeset</FONT></B>
+(impulse <FONT COLOR="#0000FF">147</FONT>) ==> Toggles between skirmish
+and clanring modes.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Timerpause</FONT></B>(impulse
+<FONT COLOR="#0000FF">45</FONT>) ==> freezes the timer and all players.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">ViewRecord</FONT></B>(impulse
+<FONT COLOR="#0000FF">44</FONT>) ==> tells the scores and playerinfo from
+the previous match.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Lockout</FONT></B>(impulse
+<FONT COLOR="#0000FF">46</FONT>) ==> toggles whether players can join a
+match in progress.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Lockmax</FONT></B>(impulse
+<FONT COLOR="#0000FF">47</FONT>) ==> toggles the number of players that
+can be on a team, available values are between 2 and 8.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">ModStatus</FONT></B>(impulse
+<FONT COLOR="#0000FF">49</FONT>) ==> gives information about current settings.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">MakeCam</FONT></B>(impulse
+<FONT COLOR="#0000FF">170</FONT>) ==> creates a camera at your current
+position with the first available number.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">RemoveCam</FONT></B>(impulse
+<FONT COLOR="#0000FF">172</FONT>) ==> removes the current camera.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Efficiency</FONT></B>(impulse
+<FONT COLOR="#0000FF">84</FONT>) ==> Gives efficiency ratings about players,
+currently kill efficiency and ammo efficiency.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">StatDump</FONT></B>(impulse
+<FONT COLOR="#0000FF">43</FONT>) ==> Toggles whether or not you will receive
+a stat summary at the end of the match.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Camera</FONT></B>(impulse
+<FONT COLOR="#0000FF">171</FONT>) ==> This removes you from your team and
+makes you a camera.&nbsp; You can view the match without interferring as
+an observer. Spacebar will let you move between cameras.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Aimset</FONT></B>(impulse
+<FONT COLOR="#0000FF">150</FONT>) ==> Toggles SV_AIM between 0.93 and 2.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Runset</FONT></B>(impulse
+<FONT COLOR="#0000FF">184</FONT>) ==>Set the SV_MAXSPEED to any 3 digit
+number.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Dropset</FONT></B>(impulse
+<FONT COLOR="#0000FF">148</FONT>) ==> Whether or not players are allowed
+to drop backpacks and weapons.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Protectset</FONT></B>(impulse
+<FONT COLOR="#0000FF">147</FONT>) ==> Toggles between the team protect
+modes, armor, health or both.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">StaticTmSet</FONT></B>(impulse
+<FONT COLOR="#0000FF">151</FONT>) ==> Whether or not players are allowed
+to change teams in Skirmish mode.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">MatchEnd</FONT></B>(impulse<FONT COLOR="#0000FF">
+133)</FONT> ==>Ends a match in progress.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">MatchSet</FONT></B>(impulse<FONT COLOR="#3366FF">
+135</FONT>)==> In Clanring mode it will toggle the conditions a match ends,
+Timelimit, Fraglimit, or both Timelimit and Fraglimit.&nbsp; Thisis&nbsp;</FONT></FONT>&nbsp;
+<BR><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1>alos
+set in the samelevel variable.</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">SetPen</FONT></B>t(impulse
+54)==> Toggles the Pentagram of Protection</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">SetQuad</FONT></B>(impulse
+53)==> Toggles the Quad Damage</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#CC0000">SetEyes</FONT></B>(impulse
+55)==> Toggles the Ring of Shadows</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#CC0000">SetRunes</FONT></B>(impulse
+56)==> Toggles the presence of the CTF runes</FONT></FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman,Times,Times NewRoman"><FONT SIZE=-1><B><FONT COLOR="#FF0000">Reset</FONT></B>(impulse
+52)==> Restarts the level you're currently on.</FONT></FONT>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;</TD>
+
+<TD COLSPAN="2" HEIGHT="5650"></TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD COLSPAN="3" HEIGHT="0"></TD>
+</TR>
+</TABLE>
+&nbsp;
+</BODY>
+</HTML>
